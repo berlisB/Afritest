@@ -11,7 +11,7 @@
 
 Nous prenons la sécurité d'AfriTest très au sérieux. Si vous découvrez une faille de sécurité, veuillez ne pas l'exposer publiquement via les issues GitHub.
 
-Veuillez plutôt envoyer un email à [Afritest.co@gmail.com] (ou utiliser la plateforme de rapport dédiée).
+Veuillez plutôt envoyer un email à [afritest.co@gmail.com] (ou utiliser la plateforme de rapport dédiée).
 
 Nous nous engageons à :
 1. Accuser réception de votre rapport dans les 48 heures.
