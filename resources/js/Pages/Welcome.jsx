@@ -177,7 +177,12 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
             {/* Stats Bar */}
             <section className="bg-slate-900 py-16">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="grid grid-cols-2 md:grid-cols-4 gap-10"
+                    >
                         {[
                             { label: 'Applications testées', val: '250+' },
                             { label: 'Testeurs certifiés', val: '1,200+' },
@@ -189,21 +194,26 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
                                 <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{stat.label}</p>
                             </div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
             {/* Solution Section */}
             <section id="solution" className="py-32 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center max-w-3xl mx-auto mb-20 space-y-6"
+                    >
                         <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-none">
                             Pourquoi choisir <span className="italic">AfriTest</span> ?
                         </h2>
                         <p className="text-lg text-slate-500 font-medium">
                             Nous avons construit le pont entre les développeurs ambitieux et la réalité du marché mobile africain.
                         </p>
-                    </div>
+                    </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {[
@@ -226,13 +236,20 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
                                 color: "bg-amber-50 text-amber-600"
                             }
                         ].map((item, i) => (
-                            <div key={i} className="group p-10 bg-white rounded-[2.5rem] border border-slate-100 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-100/50 transition-all">
+                            <motion.div 
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="group p-10 bg-white rounded-[2.5rem] border border-slate-100 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-100/50 transition-all"
+                            >
                                 <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110 group-hover:rotate-3`}>
                                     <item.icon className="w-8 h-8" />
                                 </div>
                                 <h3 className="text-2xl font-black text-slate-900 mb-4">{item.title}</h3>
                                 <p className="text-slate-500 font-medium leading-relaxed">{item.desc}</p>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
@@ -240,7 +257,12 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
 
             {/* Google Play Section */}
             <section className="py-20 px-6">
-                <div className="max-w-7xl mx-auto bg-slate-900 rounded-[4rem] p-12 md:p-24 overflow-hidden relative">
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="max-w-7xl mx-auto bg-slate-900 rounded-[4rem] p-12 md:p-24 overflow-hidden relative"
+                >
                     <div className="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
                         <Smartphone className="w-[500px] h-[500px]" />
                     </div>
@@ -262,14 +284,26 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
                                     "Suivi d'activité quotidien garanti",
                                     "Rapports de bugs complets pour la console Google"
                                 ].map((check, i) => (
-                                    <div key={i} className="flex items-center gap-4 text-white font-bold text-sm">
+                                    <motion.div 
+                                        key={i} 
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.3 + (i * 0.1) }}
+                                        className="flex items-center gap-4 text-white font-bold text-sm"
+                                    >
                                         <CheckCircle2 className="w-5 h-5 text-indigo-400" />
                                         {check}
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
                         </div>
-                        <div className="w-full lg:w-1/3">
+                        <motion.div 
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="w-full lg:w-1/3"
+                        >
                             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] p-10 space-y-8 text-center">
                                 <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Pack Validation Play</h4>
                                 <div>
@@ -284,26 +318,37 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
                                 </Link>
                                 <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest italic">Aucune carte requise</p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             {/* Testeurs Hall of Fame */}
             <section id="testeurs" className="py-32 px-6">
                 <div className="max-w-7xl mx-auto text-center space-y-20">
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
                         <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-none mb-6">
                             Nos Experts <span className="italic">Elite.</span>
                         </h2>
                         <p className="text-lg text-slate-500 font-medium max-w-2xl mx-auto">
                             Découvrez les testeurs les plus actifs de la communauté AfriTest.
                         </p>
-                    </div>
+                    </motion.div>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                         {topTesters.map((tester, i) => (
-                            <div key={i} className="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm hover:-translate-y-2 transition-all">
+                            <motion.div 
+                                key={i} 
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.05 }}
+                                className="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm hover:-translate-y-2 transition-all"
+                            >
                                 <div className="w-20 h-20 rounded-2xl bg-slate-50 mx-auto mb-4 overflow-hidden border-2 border-indigo-50 flex items-center justify-center font-black text-slate-300">
                                     {tester.name.charAt(0)}
                                 </div>
@@ -312,7 +357,7 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
                                     <Star className="w-3 h-3 text-yellow-400 fill-current" />
                                     <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Elite QA</span>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
@@ -322,7 +367,12 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
             <section id="communaute" className="py-32 px-6 bg-indigo-50/30">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col lg:flex-row items-center gap-20">
-                        <div className="flex-1 space-y-8">
+                        <motion.div 
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="flex-1 space-y-8"
+                        >
                             <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-none">
                                 Rejoignez le <span className="italic">Mouvement.</span>
                             </h2>
@@ -347,8 +397,13 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
                                     Serveur Discord
                                 </a>
                             </div>
-                        </div>
-                        <div className="flex-1 grid grid-cols-2 gap-6">
+                        </motion.div>
+                        <motion.div 
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="flex-1 grid grid-cols-2 gap-6"
+                        >
                             <div className="space-y-6 pt-12">
                                 <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 space-y-4">
                                     <div className="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 font-black">
@@ -363,7 +418,7 @@ const Welcome = ({ auth, topApps = [], topTesters = [] }) => {
                                     <p className="text-[10px] font-black uppercase tracking-widest leading-relaxed">Support communautaire 24/7</p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
