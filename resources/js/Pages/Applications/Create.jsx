@@ -53,7 +53,8 @@ export default function Create() {
             scenarios: '',
             known_issues: ''
         },
-        logo_file: null
+        logo_file: null,
+        requirements_file: null
     });
 
     const [newFeature, setNewFeature] = useState('');
@@ -231,13 +232,6 @@ export default function Create() {
                                                         <InputError message={errors.name} className="mt-2" />
                                                     </div>
 
-                                                    <div className="grid grid-cols-2 gap-4">
-                                                        <div>
-                                                            <InputLabel htmlFor="type" value="Type" className="text-slate-600 uppercase text-[10px] font-black tracking-widest mb-1" />
-                                                            <div className="relative">
-                                                                <select id="type" className="mt-1 block w-full border-slate-200 focus:border-indigo-500 rounded-2xl shadow-sm text-sm font-bold p-3 pr-10 appearance-none bg-white" value={data.type} onChange={(e) => setData('type', e.target.value)}>
-                                                                    <option value="mobile_app">Mobile App</option>
-                                                                    <option value="web_app">Web App</option>
                                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                                         <div>
                                                             <InputLabel value="Type d'application *" className="text-slate-600 uppercase text-[10px] font-black tracking-widest mb-1" />
