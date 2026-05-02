@@ -1,0 +1,27 @@
+name: Suggestion de Fonctionnalité
+description: Proposer une nouvelle idée pour AfriTest.
+title: "[FEATURE] "
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Vous avez une idée pour rendre AfriTest meilleur ? Nous sommes à l'écoute !
+  - type: textarea
+    id: description
+    attributes:
+      label: Votre Idée
+      description: Une description claire et concise de la fonctionnalité souhaitée.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Quel problème cela résout-il ?
+      description: Expliquez pourquoi cette fonctionnalité est nécessaire.
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution suggérée
+      description: Décrivez comment vous imaginez cette fonctionnalité.

@@ -1,58 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🌍 AfriTest
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Laravel](https://img.shields.io/badge/Laravel-11.x-red.svg)](https://laravel.com)
+[![React](https://img.shields.io/badge/React-18.x-blue.svg)](https://reactjs.org)
 
-## About Laravel
+**AfriTest** est la première plateforme communautaire de QA (Quality Assurance) dédiée aux applications mobiles et web en Afrique. Elle connecte les développeurs à un pool de testeurs locaux pour garantir la qualité logicielle dans les conditions réelles du marché africain.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Fonctionnalités Clés
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 🚀 **Soumission d'Apps** : Les développeurs peuvent soumettre leurs APK/IPA ou liens Web pour test.
+- 👥 **Gestion des Testeurs** : Système d'assignation intelligente et pool de testeurs actifs.
+- 📊 **Rapports de Test Détaillés** : Suivi des bugs, feedback UX et spécifications d'environnement (OS, Appareil, Réseau).
+- 🤖 **Google Play closed tracks** : Automatisation du processus de validation des 14 jours (20 testeurs) requis par Google Play.
+- 📱 **Branding Premium** : Une interface moderne pensée pour l'engagement.
+- 💬 **Communauté Intégrée** : Liens directs vers les groupes WhatsApp et Discord pour une collaboration en temps réel.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠 Stack Technique
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Backend** : Laravel 11.x
+- **Frontend** : React.js (via Inertia.js)
+- **Styling** : Tailwind CSS & Framer Motion
+- **Database** : PostgreSQL (Neon recommandé)
+- **PDF Generation** : DomPDF
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## 🚀 Installation Locale
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Prérequis
+- PHP 8.2+
+- Composer
+- Node.js & NPM
+- PostgreSQL
 
-```bash
-composer require laravel/boost --dev
+### Étapes
 
-php artisan boost:install
-```
+1. **Cloner le projet**
+   ```bash
+   git clone https://github.com/berlisB/Afritest.git
+   cd Afritest
+   ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+2. **Installer les dépendances**
+   ```bash
+   composer install
+   npm install
+   ```
 
-## Contributing
+3. **Configuration de l'environnement**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   *N'oubliez pas de configurer vos accès DB dans le fichier `.env`.*
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Migrations et Seeders**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-## Code of Conduct
+5. **Lancer le projet**
+   ```bash
+   # Terminal 1 (Laravel server)
+   php artisan serve
+   
+   # Terminal 2 (Vite for React)
+   npm run dev
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🤝 Contribution
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Les contributions sont ce qui rend la communauté open source incroyable ! 
+1. **Fork** le projet
+2. Créez votre branche (`git checkout -b feature/AmazingFeature`)
+3. **Commit** vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** sur la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une **Pull Request**
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 💬 Communauté
+
+Rejoignez-nous pour discuter du projet et de la QA en Afrique :
+- [WhatsApp Community](https://chat.whatsapp.com/FHBlsIHdNc66GuPxv2QwCx)
+- [Discord Server](#) (Bientôt)
+
+---
+
+## 📄 Licence
+
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
